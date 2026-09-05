@@ -3,23 +3,85 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Instaimagetools - Free Online Image, PDF & Text Tools</title>
-    <meta name="description" content="Compress images, resize photos, convert PNG to JPG, merge PDFs, convert Image to PDF, and process text instantly. 100% free, fast, and secure client-side tools." />
-    <meta name="keywords" content="image compressor, image resizer, image to pdf, pdf merger, text content tools, word counter, online photo tools, instaimagetools" />
+    <!-- Global Third-Party & Cross-Origin Error Shield -->
+    <script>
+      (function() {
+        var isIgnoredError = function(msg, url) {
+          var m = (msg || '').toString().toLowerCase();
+          var u = (url || '').toString().toLowerCase();
+          return (
+            m === 'script error.' ||
+            m === 'script error' ||
+            m.indexOf('script error') !== -1 ||
+            u.indexOf('profitableratecpmnetwork') !== -1 ||
+            u.indexOf('highperformanceformat') !== -1 ||
+            u.indexOf('adsterra') !== -1
+          );
+        };
+
+        window.addEventListener('error', function(event) {
+          if (!event) return;
+          var msg = event.message || (event.error && event.error.message) || '';
+          var src = event.filename || (event.target && event.target.src) || '';
+          if (isIgnoredError(msg, src)) {
+            if (typeof event.stopImmediatePropagation === 'function') {
+              event.stopImmediatePropagation();
+            }
+            if (typeof event.preventDefault === 'function') {
+              event.preventDefault();
+            }
+            return true;
+          }
+        }, true);
+
+        window.addEventListener('unhandledrejection', function(event) {
+          if (!event) return;
+          var reason = event.reason ? (event.reason.message || event.reason.toString()) : '';
+          if (isIgnoredError(reason, '')) {
+            if (typeof event.stopImmediatePropagation === 'function') {
+              event.stopImmediatePropagation();
+            }
+            if (typeof event.preventDefault === 'function') {
+              event.preventDefault();
+            }
+          }
+        }, true);
+
+        var prevOnError = window.onerror;
+        window.onerror = function(msg, url, line, col, error) {
+          if (isIgnoredError(msg, url)) {
+            return true;
+          }
+          if (typeof prevOnError === 'function') {
+            return prevOnError.apply(this, arguments);
+          }
+          return false;
+        };
+      })();
+    </script>
+    <title>Instaimagetools - 210 Free Client-Side Image, PDF & Developer Tools</title>
+    <meta name="description" content="Ultra-modern, glassmorphism client-side web utility suite for InstaImagetools featuring 210 tools across Image Studio, PDF Suite, Text & Code, Developer Tools, Passwords, QR & Barcode, Calculators, Unit Converters, Color Studio, and Date & Time with zero server transmission." />
+    <meta name="keywords" content="image tools, pdf tools, developer tools, qr code generator, password generator, unit converters, calculators, zero server, client-side tools, instaimagetools" />
+    
+    <meta name="theme-color" content="#4F46E5" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" href="/pwa-192x192.png" />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Instaimagetools - Free Online Image, PDF & Text Tools" />
-    <meta property="og:description" content="Compress images, resize photos, convert PNG to JPG, merge PDFs, convert Image to PDF, and process text instantly. 100% free, fast, and secure client-side tools." />
+    <meta property="og:title" content="Instaimagetools - 210 Free Client-Side Image, PDF & Developer Tools" />
+    <meta property="og:description" content="Ultra-modern, glassmorphism client-side web utility suite for InstaImagetools featuring 210 tools across Image Studio, PDF Suite, Text & Code, Developer Tools, Passwords, QR & Barcode, Calculators, Unit Converters, Color Studio, and Date & Time with zero server transmission." />
     <meta property="og:site_name" content="Instaimagetools" />
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Instaimagetools - Free Online Image, PDF & Text Tools" />
-    <meta name="twitter:description" content="Compress images, resize photos, convert PNG to JPG, merge PDFs, convert Image to PDF, and process text instantly. 100% free, fast, and secure client-side tools." />
+    <meta name="twitter:title" content="Instaimagetools - 210 Free Client-Side Image, PDF & Developer Tools" />
+    <meta name="twitter:description" content="Ultra-modern, glassmorphism client-side web utility suite for InstaImagetools featuring 210 tools across Image Studio, PDF Suite, Text & Code, Developer Tools, Passwords, QR & Barcode, Calculators, Unit Converters, Color Studio, and Date & Time with zero server transmission." />
   </head>
   <body>
     <div id="root"></div>
+    <!-- Adsterra Social Bar Ad Integration -->
+    <script id="adsterra-social-bar-script" type="text/javascript" src="https://pl31185385.profitableratecpmnetwork.com/a9/e3/51/a9e3512ade6f030830f25e6da56df1a1.js" async data-cfasync="false" onerror="this.onerror=null;"></script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

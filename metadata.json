@@ -1,7 +1,9 @@
 {
   "name": "Instaimagetools",
-  "description": "A fully functional, responsive, single-page web utility application for Image, PDF, and Text processing entirely on the client-side.",
-  "requestFramePermissions": [],
+  "description": "Ultra-modern, glassmorphism client-side web utility suite for InstaImagetools featuring 210 tools across Image Studio, PDF Suite, Text & Code, Developer Tools, Passwords, QR & Barcode, Calculators, Unit Converters, Color Studio, and Date & Time with zero server transmission.",
+  "requestFramePermissions": [
+    "camera"
+  ],
   "majorCapabilities": [
     "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
   ]
