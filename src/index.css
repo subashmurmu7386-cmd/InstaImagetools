@@ -5,3 +5,75 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 }
+
+@keyframes neonGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.7), 0 0 30px rgba(168, 85, 247, 0.5), inset 0 0 10px rgba(56, 189, 248, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(236, 72, 153, 0.8), 0 0 45px rgba(56, 189, 248, 0.7), inset 0 0 15px rgba(236, 72, 153, 0.4);
+  }
+}
+
+@keyframes borderRotate {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-neon-glow {
+  animation: neonGlow 2.5s infinite ease-in-out;
+}
+
+.bg-neon-gradient {
+  background: linear-gradient(135deg, #06b6d4, #a855f7, #ec4899, #3b82f6);
+  background-size: 300% 300%;
+  animation: borderRotate 4s ease infinite;
+}
+
+/* Adsterra Social Bar Viewport & UI Protection */
+#mobile-category-bottom-nav {
+  z-index: 9999 !important;
+  pointer-events: auto !important;
+}
+
+#mobile-category-bottom-nav * {
+  pointer-events: auto !important;
+}
+
+#global-copy-toast {
+  z-index: 10000 !important;
+  pointer-events: none;
+}
+
+/* Ensure active buttons, copy controls, and tool action triggers stay clickable and above floating overlays */
+button,
+input[type="button"],
+input[type="submit"],
+.copy-btn,
+button[title*="Copy" i],
+button[aria-label*="Copy" i] {
+  position: relative;
+  z-index: 20;
+}
+
+@media (max-width: 768px) {
+  /* Offset bottom-anchored social bar widgets so they never overlap the mobile category navigation tabs */
+  .adsterra-social-bar,
+  [id*="adsterra_social"],
+  [class*="adsterra_social"],
+  div[style*="position: fixed"][style*="bottom: 0px"]:not(#mobile-category-bottom-nav):not(#global-copy-toast),
+  div[style*="position:fixed"][style*="bottom:0px"]:not(#mobile-category-bottom-nav):not(#global-copy-toast),
+  div[style*="position: fixed"][style*="bottom: 0"]:not(#mobile-category-bottom-nav):not(#global-copy-toast),
+  div[style*="position:fixed"][style*="bottom:0"]:not(#mobile-category-bottom-nav):not(#global-copy-toast) {
+    bottom: 68px !important;
+  }
+}
+
+
