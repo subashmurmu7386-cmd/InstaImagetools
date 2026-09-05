@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Copy, Type, Hash, AlignLeft, Clock, Trash2, CheckCircle2 } from 'lucide-react';
-import { AdSpace } from './AdSpace';
 import { addHistory } from '../lib/history';
+import { copyToClipboard } from '../lib/clipboard';
 
 export function TextTools() {
   const [text, setText] = useState('');
@@ -17,7 +17,7 @@ export function TextTools() {
 
   const handleCopy = () => {
     if (!text.trim()) return;
-    navigator.clipboard.writeText(text);
+    copyToClipboard(text);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
     
@@ -101,8 +101,6 @@ export function TextTools() {
           </button>
         </div>
       </div>
-
-      <AdSpace type="native" />
     </div>
   );
 }
