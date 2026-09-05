@@ -1,1 +1,55 @@
-
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b112c"/>
+      <stop offset="100%" stop-color="#030712"/>
+    </linearGradient>
+    <linearGradient id="neonBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06B6D4"/>
+      <stop offset="50%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#EC4899"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E1B4B"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+    <linearGradient id="wandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A855F7"/>
+      <stop offset="100%" stop-color="#38BDF8"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+  <!-- Squircle Base with Glow -->
+  <rect x="6" y="6" width="88" height="88" rx="22" fill="url(#bgGrad)"/>
+  <rect x="6" y="6" width="88" height="88" rx="22" stroke="url(#neonBorder)" stroke-width="3" filter="url(#glow)"/>
+  
+  <!-- Stacked Cards -->
+  <!-- Bottom Card -->
+  <rect x="22" y="44" width="56" height="42" rx="10" fill="#0F172A" stroke="#06B6D4" stroke-width="1.8" transform="rotate(-6 50 65)" opacity="0.6"/>
+  <!-- Middle Card -->
+  <rect x="23" y="36" width="54" height="42" rx="10" fill="#1E1B4B" stroke="#8B5CF6" stroke-width="2" transform="rotate(-3 50 57)" opacity="0.8"/>
+  <!-- Top Active Card -->
+  <g transform="rotate(2 50 50)">
+    <rect x="24" y="26" width="52" height="42" rx="10" fill="url(#cardGrad)" stroke="#38BDF8" stroke-width="2.2"/>
+    <!-- Mountain Peaks -->
+    <path d="M29 58 L45 42 L55 52 L62 46 L71 58 Z" fill="#38BDF8" fill-opacity="0.8"/>
+    <path d="M38 58 L49 46 L58 58 Z" fill="#93C5FD" fill-opacity="0.9"/>
+    <!-- Sun -->
+    <circle cx="58" cy="36" r="5" fill="#E0F2FE" filter="url(#glow)"/>
+  </g>
+  
+  <!-- Glowing Swoosh Ring -->
+  <ellipse cx="50" cy="54" rx="42" ry="24" stroke="#38BDF8" stroke-width="2.5" stroke-dasharray="80 15 50 20" transform="rotate(-26 50 54)" filter="url(#glow)"/>
+  
+  <!-- Magic Wand -->
+  <line x1="78" y1="28" x2="62" y2="44" stroke="url(#wandGrad)" stroke-width="4.5" stroke-linecap="round" filter="url(#glow)"/>
+  <circle cx="62" cy="44" r="2.5" fill="#FFFFFF"/>
+  <circle cx="78" cy="28" r="2" fill="#E0F2FE"/>
+  
+  <!-- Sparkles / Stars -->
+  <path d="M76 16 Q76 22 82 22 Q76 22 76 28 Q76 22 70 22 Q76 22 76 16 Z" fill="#38BDF8" filter="url(#glow)"/>
+  <path d="M86 28 Q86 31 89 31 Q86 31 86 34 Q86 31 83 31 Q86 31 86 28 Z" fill="#E0F2FE"/>
+</svg>
